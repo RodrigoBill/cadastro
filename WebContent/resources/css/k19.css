@@ -1,16 +1,70 @@
 body {
-font-family: arial , helvetica , sans-serif ;
-font-size: 14 px ;
-left: 300px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 14 px;
+	border-right-width: medium;
+	background-color: #87CEFA;
+	right: 2px;
 }
+
 h1 {
-color: #006699;
-font-size: 18 px;
+	color: #006699;
+	font-size: 18 px;
 }
+
 ul {
-list-style-type: square;
+	list-style-type: square;
 }
+
 input {
-background-color: #E6E6FA ;
-border: solid 1 px #000000;
+	background-color: #E6E6FA;
+	border: solid 1 px #000000;
+}
+
+#campo_formulario {
+	height: auto;
+	position: fixed;
+	float: right;
+	width: 70%;
+}
+
+#rodape{
+	text-align:"center";
+	position: absolute;
+}
+
+#menu {
+	width: 11em;
+	padding: 0;
+	margin: 0;
+	font: 12px Verdana, sans-serif;
+	background: #000;
+	border-top: 3px solid red;
+	border-bottom: 3px solid red;
+	position: fixed;
+}
+
+#menu li {
+	list-style: none;
+	margin: 0.5em 0 0.5em 0.5em;
+}
+
+#menu li a {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #fff;
+}
+
+#menu li a:visited {
+	color: #fff;
+}
+
+#menu li a:hover {
+	background: #fff;
+	color: #000;
+}
+
+#menu li a:active {
+	background: #ccc;
+	color: #000;
 }

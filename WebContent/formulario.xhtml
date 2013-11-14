@@ -1,109 +1,103 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
+<html>
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-<h:head>
+	<ui:define name="conteudo">
 
-	<title>Cadastro</title>
+		<!-- <ui:include src="/menuTemplate.xhtml" /> -->
 
-</h:head>
+		<div id="campo_formulario">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome :" for="campo-nome" />
+					<h:inputText value="#{pessoa.nome}" id="campo-nome" />
 
-<h:body>
+					<h:outputLabel value="Data de nascimento :" />
+					<h:inputText value="#{pessoa.dataNascimento}">
+						<f:convertDateTime pattern="DD/mm/yyyy"></f:convertDateTime>
+					</h:inputText>
 
-	<h:outputStylesheet name="k19.css" library="css" />
+					<h:outputLabel value="Idade :" />
+					<h:inputText value="#{pessoa.idade}" />
 
-	<h:graphicImage value="/imagens/gileade.jpg" width="600" height="200"
-		style="height: 216px; width: 516px; "></h:graphicImage>
-	<br />
+					<h:outputLabel value="Responsável :" />
+					<h:inputText value="#{pessoa.responsavel}" />
 
-	<h:form>
+					<h:outputLabel value="Telefone :" for="campo-telefone" />
+					<h:inputText value="#{pessoa.telefone}" id="campo-telefone" />
 
-		<h:panelGrid columns="2">
-			<h:outputLabel value="Nome :" for="campo-nome" />
-			<h:inputText value="#{pessoa.nome}" id="campo-nome" />
+					<h:outputLabel value="Endereço :" />
+					<h:inputText value="#{pessoa.endereco}" />
 
-			<h:outputLabel value="Data de nascimento :" />
-			<h:inputText value="#{pessoa.dataNascimento}">
-				<f:convertDateTime pattern="DD/mm/yyyy"></f:convertDateTime>
-			</h:inputText>
+					<h:outputLabel value="E-mail :" for="campo-email" />
+					<h:inputText value="#{pessoa.email}" id="campo-email" />
 
-			<h:outputLabel value="Idade :" />
-			<h:inputText value="#{pessoa.idade}" />
+					<h:outputLabel value="Facebook :" />
+					<h:inputText value="#{pessoa.facebook}" />
 
-			<h:outputLabel value="Responsável :" />
-			<h:inputText value="#{pessoa.responsavel}" />
+				</h:panelGrid>
 
-			<h:outputLabel value="Telefone :" for="campo-telefone" />
-			<h:inputText value="#{pessoa.telefone}" id="campo-telefone" />
+				<br />
 
-			<h:outputLabel value="Endereço :" />
-			<h:inputText value="#{pessoa.endereco}" />
+				<h:outputLabel value="Igreja :" />
+				<h:selectOneMenu value="#{pessoa.igreja}">
+					<f:selectItem itemValue="EBD" itemLabel="EBD" />
+					<f:selectItem itemValue="Coral" itemLabel="Coral" />
+					<f:selectItem itemValue="Louvor" itemLabel="Louvor" />
+					<f:selectItem itemValue="Teatro" itemLabel="Teatro" />
+					<f:selectItem itemValue="Outros" itemLabel="Outros" />
+				</h:selectOneMenu>
+				<br />
 
-			<h:outputLabel value="E-mail :" for="campo-email" />
-			<h:inputText value="#{pessoa.email}" id="campo-email" />
+				<h:outputLabel value="Batizado :" />
+				<h:selectOneMenu value="#{pessoa.batismo}">
+					<f:selectItem itemValue="Águas" itemLabel="Águas" />
+					<f:selectItem itemValue="Espírito Santo" itemLabel="Espírito Santo" />
+				</h:selectOneMenu>
+				<br />
 
-			<h:outputLabel value="Facebook :" />
-			<h:inputText value="#{pessoa.facebook}" />
+				<h:outputLabel value="Pessoal :" />
+				<h:selectOneMenu value="#{pessoa.atividade}">
+					<f:selectItem itemValue="Estuda" itemLabel="Estuda" />
+					<f:selectItem itemValue="Trabalha" itemLabel="Trabalha" />
+					<f:selectItem itemValue="Vestibular / Concurso / Curso"
+						itemLabel="Vestibular / Concurso / Curso" />
+				</h:selectOneMenu>
+				<br />
 
-		</h:panelGrid>
+				<h:outputLabel value="Observação :" />
+				<h:inputTextarea value="#{pessoa.observacao}"></h:inputTextarea>
+				<br />
 
-		<br />
+				<p>
+					Comprometo-me em ser integrante da Cia de Dança Gileade, de modo a
+					contribuir para seu crescimento menisterial. Responsabilizo-me
+					quanto à assiduidade aos ensaios, participação nos espetáculos,
+					congressos da igreja local e eventos convidados.<br />
+					Comprometo-me em colaborar em quaisquer e demais necessecidades do
+					grupo, <a>sendo devidamente submisso à liderança e
+						colaboradores aos liderados.</a>
+				</p>
+				<br />
 
-		<h:outputLabel value="Igreja :" />
-		<h:selectOneMenu value="#{pessoa.igreja}">
-			<f:selectItem itemValue="EBD" itemLabel="EBD" />
-			<f:selectItem itemValue="Coral" itemLabel="Coral" />
-			<f:selectItem itemValue="Louvor" itemLabel="Louvor" />
-			<f:selectItem itemValue="Teatro" itemLabel="Teatro" />
-			<f:selectItem itemValue="Outros" itemLabel="Outros" />
-		</h:selectOneMenu>
-		<br />
+				<h:outputLabel value="Sugestão :" />
+				<h:inputTextarea value="#{pessoa.sugestao}"></h:inputTextarea>
+				<br />
+				<br />
+				<br />
+				<br />
+				<h:commandButton value="Salva Cadastro" />
+			</h:form>
+		</div>
 
-		<h:outputLabel value="Batizado :" />
-		<h:selectOneMenu value="#{pessoa.batismo}">
-			<f:selectItem itemValue="Águas" itemLabel="Águas" />
-			<f:selectItem itemValue="Espírito Santo" itemLabel="Espírito Santo" />
-		</h:selectOneMenu>
-		<br />
-
-		<h:outputLabel value="Pessoal :" />
-		<h:selectOneMenu value="#{pessoa.atividade}">
-			<f:selectItem itemValue="Estuda" itemLabel="Estuda" />
-			<f:selectItem itemValue="Trabalha" itemLabel="Trabalha" />
-			<f:selectItem itemValue="Vestibular / Concurso / Curso"
-				itemLabel="Vestibular / Concurso / Curso" />
-		</h:selectOneMenu>
-		<br />
-
-		<h:outputLabel value="Observação :" />
-		<h:inputTextarea value="#{pessoa.observacao}"></h:inputTextarea>
-		<br />
-
-		<p>
-			Comprometo-me em ser integrante da Cia de Dança Gileade, de modo a
-			contribuir para seu crescimento menisterial. Responsabilizo-me quanto
-			à assiduidade aos ensaios, participação nos espetáculos, congressos
-			da igreja local e eventos convidados.<br /> Comprometo-me em
-			colaborar em quaisquer e demais necessecidades do grupo, <a>sendo
-				devidamente submisso à liderança e colaboradores aos liderados.</a>
-		</p>
-		<br />
-
-		<h:outputLabel value="Sugestão :" />
-		<h:inputTextarea value="#{pessoa.sugestao}"></h:inputTextarea>
-		<br />
-		<br />
-		<br />
-		<br />
-
-		<h:commandButton value="Salva Cadastro" />
-
-	</h:form>
-
-	<!--
+		<ui:include src="/formularioResposta.xhtml" />
+		<!--
 	O nome é <b>#{pessoa.nome}</b>
 	<br />
 	Data de nascimento é <b>#{pessoa.dataNascimento}</b> Idade : <b>#{pessoa.idade}</b>
@@ -129,24 +123,7 @@
 	</h:outputFormat>
  -->
 
-	<h1>Dados Cadastrados</h1>>
-	<ul>
-		<li><h:outputText value="#{pessoa.nome}" /></li>
-		<li><h:outputText value="#{pessoa.dataNascimento}" /></li>
-		<li><h:outputText value="#{pessoa.idade}" /></li>
-		<li><h:outputText value="#{pessoa.email}" /></li>
-		<li><h:outputText value="#{pessoa.facebook}" /></li>
-		<li><h:outputText value="#{pessoa.responsavel}" /></li>
-		<li><h:outputText value="#{pessoa.endereco}" /></li>
-		<li><h:outputText value="#{pessoa.observacao}" /></li>
-		<li><h:outputText value="#{pessoa.sugestao}" /></li>
-	</ul>
-
-	<h:outputFormat value="Igreja: {0} Batismo: {1} Atividade: {2}">
-		<f:param value="#{pessoa.igreja}" />
-		<f:param value="#{pessoa.batismo}" />
-		<f:param value="#{pessoa.atividade}" />
-	</h:outputFormat>
-</h:body>
+	</ui:define>
+</ui:composition>
 
 </html>
