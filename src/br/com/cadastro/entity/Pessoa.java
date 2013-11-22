@@ -1,10 +1,10 @@
 package br.com.cadastro.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.annotation.Generated;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Generated(value = { "pessoa" })
 @ManagedBean
-public class Pessoa implements Serializable {
+@ViewScoped
+public class Pessoa{
 
 	@Id
 	@GeneratedValue

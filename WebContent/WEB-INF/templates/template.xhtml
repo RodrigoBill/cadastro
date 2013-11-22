@@ -13,23 +13,28 @@
 </h:head>
 
 <h:graphicImage value="/imagens/gileade.jpg" width="600" height="200"
-	style="height: 216px; width: 100%; "></h:graphicImage>
+	style="height: 216px"></h:graphicImage>
 
 <h:body>
 
 	<hr />
+
+	<div id="menu">
+		<ui:insert name="menu">
+			
+		</ui:insert>
+	</div>
 	<div id="campo_formulario">
 		<ui:insert name="conteudo">
 
 		</ui:insert>
+
+
+		<div id="footer" style="text-align: center">
+			<hr />
+			&copy;2013 RodrigoAraujo. Todos os direitos reservados.
+		</div>
 	</div>
-
-
-	<div id="rodape" style="text-align: center" align="center">
-		<hr />
-		&copy;2013 RodrigoAraujo. Todos os direitos reservados.
-	</div>
-
 </h:body>
 
 </html>

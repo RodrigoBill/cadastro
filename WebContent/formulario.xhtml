@@ -8,42 +8,42 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core">
 
+	<ui:define name="menu">
+		<ui:include src="/menuTemplate.xhtml" />
+	</ui:define>
+
 	<ui:define name="conteudo">
 
 		<!-- <ui:include src="/menuTemplate.xhtml" /> -->
 
-		<div id="campo_formulario">
-			<h:form>
-				<h:panelGrid columns="2">
-					<h:outputLabel value="Nome :" for="campo-nome" />
-					<h:inputText value="#{pessoa.nome}" id="campo-nome" />
+		<h:form>
+			<h:panelGrid columns="4">
+				<h:outputLabel value="Nome :" for="campo-nome" />
+				<h:inputText value="#{pessoa.nome}" id="campo-nome" />
 
-					<h:outputLabel value="Data de nascimento :" />
-					<h:inputText value="#{pessoa.dataNascimento}">
-						<f:convertDateTime pattern="DD/mm/yyyy"></f:convertDateTime>
-					</h:inputText>
+				<h:outputLabel value="Data de nascimento :" />
+				<h:inputText value="#{pessoa.dataNascimento}">
+					<f:convertDateTime pattern="DD/mm/yyyy"></f:convertDateTime>
+				</h:inputText>
 
-					<h:outputLabel value="Idade :" />
-					<h:inputText value="#{pessoa.idade}" />
+				<h:outputLabel value="Idade :" />
+				<h:inputText value="#{pessoa.idade}" />
 
-					<h:outputLabel value="Responsável :" />
-					<h:inputText value="#{pessoa.responsavel}" />
+				<h:outputLabel value="Responsável :" />
+				<h:inputText value="#{pessoa.responsavel}" />
 
-					<h:outputLabel value="Telefone :" for="campo-telefone" />
-					<h:inputText value="#{pessoa.telefone}" id="campo-telefone" />
+				<h:outputLabel value="Telefone :" for="campo-telefone" />
+				<h:inputText value="#{pessoa.telefone}"
+					id="campo-telefone" />
 
-					<h:outputLabel value="Endereço :" />
-					<h:inputText value="#{pessoa.endereco}" />
+				<h:outputLabel value="Endereço :" />
+				<h:inputText value="#{pessoa.endereco}" />
 
-					<h:outputLabel value="E-mail :" for="campo-email" />
-					<h:inputText value="#{pessoa.email}" id="campo-email" />
+				<h:outputLabel value="E-mail :" for="campo-email" />
+				<h:inputText value="#{pessoa.email}" id="campo-email" />
 
-					<h:outputLabel value="Facebook :" />
-					<h:inputText value="#{pessoa.facebook}" />
-
-				</h:panelGrid>
-
-				<br />
+				<h:outputLabel value="Facebook :" />
+				<h:inputText value="#{pessoa.facebook}" />
 
 				<h:outputLabel value="Igreja :" />
 				<h:selectOneMenu value="#{pessoa.igreja}">
@@ -53,14 +53,12 @@
 					<f:selectItem itemValue="Teatro" itemLabel="Teatro" />
 					<f:selectItem itemValue="Outros" itemLabel="Outros" />
 				</h:selectOneMenu>
-				<br />
 
 				<h:outputLabel value="Batizado :" />
 				<h:selectOneMenu value="#{pessoa.batismo}">
 					<f:selectItem itemValue="Águas" itemLabel="Águas" />
 					<f:selectItem itemValue="Espírito Santo" itemLabel="Espírito Santo" />
 				</h:selectOneMenu>
-				<br />
 
 				<h:outputLabel value="Pessoal :" />
 				<h:selectOneMenu value="#{pessoa.atividade}">
@@ -71,32 +69,31 @@
 				</h:selectOneMenu>
 				<br />
 
-				<h:outputLabel value="Observação :" />
-				<h:inputTextarea value="#{pessoa.observacao}"></h:inputTextarea>
-				<br />
+			</h:panelGrid>
 
-				<p>
-					Comprometo-me em ser integrante da Cia de Dança Gileade, de modo a
-					contribuir para seu crescimento menisterial. Responsabilizo-me
-					quanto à assiduidade aos ensaios, participação nos espetáculos,
-					congressos da igreja local e eventos convidados.<br />
-					Comprometo-me em colaborar em quaisquer e demais necessecidades do
-					grupo, <a>sendo devidamente submisso à liderança e
-						colaboradores aos liderados.</a>
-				</p>
-				<br />
+			<h:outputLabel value="Observação :" />
+			<h:inputTextarea value="#{pessoa.observacao}"></h:inputTextarea>
 
-				<h:outputLabel value="Sugestão :" />
-				<h:inputTextarea value="#{pessoa.sugestao}"></h:inputTextarea>
-				<br />
-				<br />
-				<br />
-				<br />
-				<h:commandButton value="Salva Cadastro" />
-			</h:form>
-		</div>
+			<h:outputLabel value="Sugestão :" />
+			<h:inputTextarea value="#{pessoa.sugestao}"></h:inputTextarea>
+			<br />
+			<br />
+
+			<p>
+				Comprometo-me em ser integrante da Cia de Dança Gileade, de modo a
+				contribuir para seu crescimento menisterial. Responsabilizo-me
+				quanto à assiduidade aos ensaios, participação nos espetáculos,
+				congressos da igreja local e eventos convidados.<br />
+				Comprometo-me em colaborar em quaisquer e demais necessecidades do
+				grupo, <a>sendo devidamente submisso à liderança e colaboradores
+					aos liderados.</a>
+			</p>
+
+			<h:commandButton value="Salva Cadastro" />
+		</h:form>
 
 		<ui:include src="/formularioResposta.xhtml" />
+
 		<!--
 	O nome é <b>#{pessoa.nome}</b>
 	<br />
