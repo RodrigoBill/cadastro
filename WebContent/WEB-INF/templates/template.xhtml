@@ -6,35 +6,32 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-<h:outputStylesheet library="css" name="k19.css" />
+<h:outputStylesheet library="css" name="css.css" />
+
 
 <h:head>
 	<title>Cadastro Gileade</title>
 </h:head>
 
-<h:graphicImage value="/imagens/gileade.jpg" width="600" height="200"
-	style="height: 216px"></h:graphicImage>
-
 <h:body>
 
-	<hr />
-
-	<div id="menu">
 		<ui:insert name="menu">
-			
+
 		</ui:insert>
-	</div>
-	<div id="campo_formulario">
+
+	<center><h:graphicImage value="/imagens/gileade.jpg" width="600" height="200"
+		style="height: 216px"></h:graphicImage></center>
+	<hr />
 		<ui:insert name="conteudo">
 
+
+
 		</ui:insert>
-
-
 		<div id="footer" style="text-align: center">
 			<hr />
 			&copy;2013 RodrigoAraujo. Todos os direitos reservados.
 		</div>
-	</div>
+
 </h:body>
 
 </html>
